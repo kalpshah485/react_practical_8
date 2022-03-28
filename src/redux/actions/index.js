@@ -4,3 +4,8 @@ export const registerUser = (user) => {
         payload: user
     }
 }
+export const logout = () => {
+    return {
+        type: 'LOGOUT'
+    }
+}

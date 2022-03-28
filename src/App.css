@@ -5,3 +5,31 @@
     height: 90vh;
     width: inherit;
 }
+.vh-30 {
+    height: 30vh;
+    width: inherit;
+}
+.vh-70 {
+    height: 70vh;
+    width: inherit;
+}
+.user-detail {
+    margin-top: -50px;
+    margin-left: 30%;
+    height: calc(70vh - 100px);
+    width: 40%;
+    border-bottom: 5px solid black;
+    font-size: larger;
+    text-align: center;
+}
+.profile-image img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.highlight {
+    font-weight: bold;
+}
+.greeting {
+    margin-bottom: 10vh;
+}

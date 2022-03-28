@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import womanImage from '../assets/images/signupImage.png';
 import { registerUser } from '../redux/actions';
+import womanImage from '../assets/images/signupImage.png';
+import dummy from '../assets/images/dummyProfile.jpg';
 
 function Signup() {
   const { user } = useSelector(state => state);
@@ -25,6 +26,7 @@ function Signup() {
       name,
       email,
       phone,
+      avatar : dummy,
       pass
     }
     dispatch(registerUser(user));
