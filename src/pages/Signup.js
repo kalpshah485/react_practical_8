@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import womanImage from '../assets/images/woman_icon.png'
+import womanImage from '../assets/images/signupImage.png';
 import { registerUser } from '../redux/actions';
 
 function Signup() {
@@ -17,7 +17,7 @@ function Signup() {
     if (user) {
       navigate('/home')
     }
-  }, [user,navigate]);
+  }, [user, navigate]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,7 +40,7 @@ function Signup() {
   }
   return (
     <div className="row m-0 p-0">
-      <div className="col">
+      <div className="col col-md-6">
         <h1>
           SignUp
         </h1>
@@ -95,7 +95,7 @@ function Signup() {
           </button>
         </form>
       </div>
-      <div className="col">
+      <div className="col d-none d-md-block">
         <img className="woman-photo" src={womanImage} alt="woman" />
       </div>
     </div>
