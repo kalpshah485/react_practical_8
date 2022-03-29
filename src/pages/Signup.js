@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../redux/actions';
 import womanImage from '../assets/images/signupImage.png';
-import dummy from '../assets/images/dummyProfile.jpg';
 
 function Signup() {
   const { user } = useSelector(state => state);
@@ -12,8 +11,11 @@ function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [imageName, setImageName] = useState("");
+  const [image, setImage] = useState("");
   const [pass, setPass] = useState("");
   const [cPass, setCPass] = useState("");
+  const inputRef = useRef(null);
   useEffect(() => {
     if (user) {
       navigate('/home')
@@ -26,7 +28,7 @@ function Signup() {
       name,
       email,
       phone,
-      avatar : dummy,
+      avatar: image,
       pass
     }
     dispatch(registerUser(user));
@@ -34,11 +36,24 @@ function Signup() {
   }
   const handleReset = (event) => {
     event.preventDefault();
+    inputRef.current.value = '';
     setName("");
     setEmail("");
     setPhone("");
+    setImage("");
+    setImageName("");
     setPass("");
     setCPass("");
+  }
+  const openImageDialog = (event) => {
+    event.preventDefault();
+    inputRef.current.click();
+  }
+  const onImageChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      setImageName(event.target.files[0].name);
+      setImage(URL.createObjectURL(event.target.files[0]));
+    }
   }
   return (
     <div className="row m-0 p-0">
@@ -47,7 +62,19 @@ function Signup() {
           SignUp
         </h1>
         <form>
-          <input type="file" /><br />
+          <div className="text-center">
+            <button className="btn btn-light" onClick={openImageDialog}>
+              Photo +
+            </button>
+            <p className="m-0">{imageName ? imageName:"No file chosen"}</p>
+          </div>
+          <input
+            type="file"
+            className="d-none"
+            accept='.jpg, .png'
+            onChange={onImageChange}
+            ref={inputRef}
+          />
           <label htmlFor="name">Name</label><br />
           <input
             type="text"

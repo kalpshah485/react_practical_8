@@ -1,11 +1,8 @@
-import { useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import './App.css';
 import routes from './config/routes';
+import './App.css';
 
 function App() {
-  const state = useSelector(state => state);
-  console.log(state);
   return (
     <Routes>
       {
