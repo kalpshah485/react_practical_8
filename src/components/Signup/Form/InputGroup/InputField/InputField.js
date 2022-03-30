@@ -1,13 +1,15 @@
 import React from 'react'
 
-function InputField({ name, type, value, setValue }) {
+function InputField({ name, type, value, onChange, onBlur }) {
   return (
     <input
       type={type}
       id={name}
+      name={name}
       className="form-control"
       value={value}
-      onChange={(event) => setValue(event.target.value)}
+      onChange={onChange}
+      onBlur={onBlur}
       autoComplete="off"
     />
   )
