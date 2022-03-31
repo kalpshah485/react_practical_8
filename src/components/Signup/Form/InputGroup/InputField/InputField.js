@@ -11,6 +11,7 @@ function InputField({ name, type, value, onChange, onBlur }) {
       onChange={onChange}
       onBlur={onBlur}
       autoComplete="off"
+      required
     />
   )
 }
