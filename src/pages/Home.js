@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../redux/actions';
 
 function Home() {
   const { user } = useSelector(state => state);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (!user) {
-      navigate('/signup');
-    }
-  }, [user, navigate]);
 
   if (user) {
     return (

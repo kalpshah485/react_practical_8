@@ -23,11 +23,7 @@ const validate = values => {
 
     if (!values.phone) {
         errors.phone = "Phone No required!";
-    } else if (
-        !/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[56789]\d{9}$/gm.test(
-            values.phone
-        )
-    ) {
+    } else if (!/^(\+91)?(-)?\s*?(91)?\s*?(\d{3})-?\s*?(\d{3})-?\s*?(\d{4})$/g.test(values.phone)) {
         errors.phone = "Invalid Phone No!";
     }
 
@@ -94,7 +90,7 @@ function Form() {
                 </button>
                 <div>
                     {
-                        formik.values.image ? <img className="preview" src={URL.createObjectURL(formik.values.image)} alt={formik.values.image.name} /> : ''
+                        formik.values.image ? <img className="preview" title={formik.values.image.name} src={URL.createObjectURL(formik.values.image)} alt={formik.values.image.name} /> : ''
                     }
                 </div>
                 <p className="m-0">{formik.values.image.name ? formik.values.image.name : "No file chosen"}</p>
