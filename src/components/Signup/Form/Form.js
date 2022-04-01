@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import { registerUser } from '../../../redux/actions';
@@ -43,6 +43,7 @@ const validate = values => {
 };
 
 function Form() {
+    const [imageName, setImageName] = useState("");
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -58,11 +59,9 @@ function Form() {
                 name: values.name,
                 email: values.email,
                 phone: values.phone,
-                avatar: URL.createObjectURL(values.image),
+                avatar: values.image,
                 pass: values.pass
-
-            })
-            );
+            }));
         }
     })
     const dispatch = useDispatch();
@@ -76,10 +75,16 @@ function Form() {
     }
     const onImageChange = (event) => {
         if (event.currentTarget.files && event.currentTarget.files[0]) {
-            formik.setFieldValue(
-                "image",
-                event.currentTarget.files[0]
-            );
+            setImageName(event.currentTarget.files[0].name);
+            const reader = new FileReader();
+            reader.readAsDataURL(event.currentTarget.files[0]);
+            reader.onload = () => {
+                formik.setFieldValue(
+                    "image",
+                    reader.result.toString()
+                );
+            }
+            reader.onerror = error => console.log(error);
         }
     }
     return (
@@ -90,10 +95,10 @@ function Form() {
                 </button>
                 <div>
                     {
-                        formik.values.image ? <img className="preview" title={formik.values.image.name} src={URL.createObjectURL(formik.values.image)} alt={formik.values.image.name} /> : ''
+                        formik.values.image ? <img className="preview" title={imageName} src={formik.values.image} alt={imageName} /> : ''
                     }
                 </div>
-                <p className="m-0">{formik.values.image.name ? formik.values.image.name : "No file chosen"}</p>
+                <p className="m-0">{imageName ? imageName : "No file chosen"}</p>
             </div>
             <input
                 type="file"

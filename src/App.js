@@ -3,8 +3,18 @@ import routes from './config/routes';
 import PrivateRoute from './containers/PrivateRoute';
 import PublicRoute from './containers/PublicRoute';
 import './App.css';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { registerUser } from './redux/actions';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if(JSON.parse(localStorage.getItem("userData"))) {
+      dispatch(registerUser(JSON.parse(localStorage.getItem("userData"))))
+    }
+  }, [dispatch]);
+
   return (
     <Routes>
       {
