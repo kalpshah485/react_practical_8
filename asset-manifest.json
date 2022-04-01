@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/react_practical_8/static/css/main.4024ca90.css",
-    "main.js": "/react_practical_8/static/js/main.f1682260.js",
+    "main.js": "/react_practical_8/static/js/main.9207b80f.js",
     "static/js/787.9523ab36.chunk.js": "/react_practical_8/static/js/787.9523ab36.chunk.js",
     "static/media/signupImage.png": "/react_practical_8/static/media/signupImage.7418d89dbe3c2effd1d8.png",
     "index.html": "/react_practical_8/index.html",
     "main.4024ca90.css.map": "/react_practical_8/static/css/main.4024ca90.css.map",
-    "main.f1682260.js.map": "/react_practical_8/static/js/main.f1682260.js.map",
+    "main.9207b80f.js.map": "/react_practical_8/static/js/main.9207b80f.js.map",
     "787.9523ab36.chunk.js.map": "/react_practical_8/static/js/787.9523ab36.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4024ca90.css",
-    "static/js/main.f1682260.js"
+    "static/js/main.9207b80f.js"
   ]
 }
