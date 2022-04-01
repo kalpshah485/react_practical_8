@@ -7,15 +7,15 @@ function App() {
   const state = useSelector(state => state);
   console.log(state);
   return (
-      <Routes>
-        {
-          Object.keys(routes).map(key => {
-            const value = routes[key];
-            return <Route {...value} key={key} />
-          })
-        }
-        <Route path='/' element={<Navigate to='/home' />} />
-      </Routes>
+    <Routes>
+      {
+        Object.keys(routes).map(key => {
+          const value = routes[key];
+          return <Route {...value} key={key} />
+        })
+      }
+      <Route path='/' element={<Navigate to='/home' replace />} />
+    </Routes>
   );
 }
 
