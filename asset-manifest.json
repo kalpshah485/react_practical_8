@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react_practical_8/home/static/css/main.4024ca90.css",
-    "main.js": "/react_practical_8/home/static/js/main.40217352.js",
-    "static/js/787.9523ab36.chunk.js": "/react_practical_8/home/static/js/787.9523ab36.chunk.js",
-    "static/media/signupImage.png": "/react_practical_8/home/static/media/signupImage.7418d89dbe3c2effd1d8.png",
-    "index.html": "/react_practical_8/home/index.html",
-    "main.4024ca90.css.map": "/react_practical_8/home/static/css/main.4024ca90.css.map",
-    "main.40217352.js.map": "/react_practical_8/home/static/js/main.40217352.js.map",
-    "787.9523ab36.chunk.js.map": "/react_practical_8/home/static/js/787.9523ab36.chunk.js.map"
+    "main.css": "/react_practical_8/static/css/main.4024ca90.css",
+    "main.js": "/react_practical_8/static/js/main.f1682260.js",
+    "static/js/787.9523ab36.chunk.js": "/react_practical_8/static/js/787.9523ab36.chunk.js",
+    "static/media/signupImage.png": "/react_practical_8/static/media/signupImage.7418d89dbe3c2effd1d8.png",
+    "index.html": "/react_practical_8/index.html",
+    "main.4024ca90.css.map": "/react_practical_8/static/css/main.4024ca90.css.map",
+    "main.f1682260.js.map": "/react_practical_8/static/js/main.f1682260.js.map",
+    "787.9523ab36.chunk.js.map": "/react_practical_8/static/js/787.9523ab36.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4024ca90.css",
-    "static/js/main.40217352.js"
+    "static/js/main.f1682260.js"
   ]
 }
