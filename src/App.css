@@ -33,3 +33,8 @@
 .greeting {
     margin-bottom: 10vh;
 }
+.preview {
+    margin-top: 5px;
+    height: 80px;
+    width: 80px;
+}
